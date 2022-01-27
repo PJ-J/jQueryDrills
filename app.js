@@ -1,17 +1,23 @@
-$(function() {
+$(function () {
   // Handler for .ready() called.
 
-  $('#btnSubmit').prop('disabled',true);
-  $('#inputText').keyup(function(){
-      $('#btnSubmit').prop('disabled', this.value == "" ? true : false);     
-  })
+  let div = $("<div>");
+  let h2 = $("<h2>");
+  let inputText = $("#inputText").val();
 
-  function notify() {
-    alert( $("#inputText").val() );
-  }
-  $( "#btnSubmit" ).on( "click", notify );
+  div.appendTo('body');
 
+  $("#btnSubmit").prop("disabled", true);
+  $("#inputText").keyup(function () {
+    $("#btnSubmit").prop("disabled", this.value == "" ? true : false);
+  });
+
+  $("#btnSubmit").on("click", function (event) {
+    event.preventDefault();
+    
+    h2.append(inputText);
+    div.append(h2);
+  });
 });
-
 
 
