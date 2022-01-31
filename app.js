@@ -17,35 +17,31 @@ $(function () {
   $("#btnSubmit").on("click", function (event) {
     event.preventDefault();
 
-    let randColor = ("rgb("+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+")");
+    let randColor =
+      "rgb(" +
+      Math.floor(Math.random() * 255) +
+      "," +
+      Math.floor(Math.random() * 255) +
+      "," +
+      Math.floor(Math.random() * 255) +
+      ")";
 
     // h2.append($("#inputText").val());
     // div.append(h2);
 
     // the problem here now is that every time i click submit it just adds text to the already existing li element. i need to make the function create a new li every click
 
-    const li = $('<li>' + $('#inputText').val() + '</li>');
+    const li = $("<li>" + $("#inputText").val() + "</li>");
     ul.append(li);
 
-    li.click(function() {
-
+    li.click(function () {
       $(this).css("color", randColor);
-     console.log($(this));
-
-     
+      console.log($(this));
     });
 
-    li.on("dblclick", function() {
+    li.on("dblclick", function () {
       $(this).remove();
       // $(this).css("border-radius", "10px");
     });
-  
   });
-
-
-  
- 
-  
-  
-  
 });
