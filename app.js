@@ -14,6 +14,11 @@ $(function () {
     $("#btnSubmit").prop("disabled", this.value == "" ? true : false);
   });
 
+  // $("#btnSubmit").on("click", function() {
+  //   alert($("#inputText").val());
+  // });
+
+
   $("#btnSubmit").on("click", function (event) {
     event.preventDefault();
 
@@ -26,6 +31,7 @@ $(function () {
       Math.floor(Math.random() * 255) +
       ")";
 
+      
     // h2.append($("#inputText").val());
     // div.append(h2);
 
@@ -36,7 +42,7 @@ $(function () {
 
     li.click(function () {
       $(this).css("color", randColor);
-      console.log($(this));
+      // console.log($(this));
     });
 
     li.on("dblclick", function () {
