@@ -18,7 +18,6 @@ $(function () {
   //   alert($("#inputText").val());
   // });
 
-
   $("#btnSubmit").on("click", function (event) {
     event.preventDefault();
 
@@ -31,11 +30,8 @@ $(function () {
       Math.floor(Math.random() * 255) +
       ")";
 
-      
     // h2.append($("#inputText").val());
     // div.append(h2);
-
-    // the problem here now is that every time i click submit it just adds text to the already existing li element. i need to make the function create a new li every click
 
     const li = $("<li>" + $("#inputText").val() + "</li>");
     ul.append(li);
